@@ -1,0 +1,13 @@
+services:
+  image-server:
+    image: image-server-img
+    container_name: image-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8686:8686"
+    volumes:
+      - ./images:/app/images
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
