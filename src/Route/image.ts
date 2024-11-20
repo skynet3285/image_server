@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { uploadLimiter, downloadLimiter, upload } from "../Middleware/multer";
+import { upload } from "../Middleware/multer";
+import { downloadLimiter, uploadLimiter } from "../Middleware/rate-limit";
 import { postImages, getImagesJpg } from "../Controller/image";
 
 const imageRouter = Router();

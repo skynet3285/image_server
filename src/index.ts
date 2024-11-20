@@ -9,6 +9,9 @@ app.use(express.json());
 app.use(cors);
 app.options("*", cors);
 
+// Trust the first proxy
+app.set("trust proxy", true);
+
 app.use(`${serverConfig.entrypoint}/`, imageRouter);
 
 app.all("*", (_req: Request, _res: Response) => {});
